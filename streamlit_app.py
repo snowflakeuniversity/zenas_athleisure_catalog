@@ -12,7 +12,7 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select top 1 direct_url from catalog;")
 my_data_row = my_cur.fetchone()
 
-st.image(
+streamlit.image(
             my_data_row,
             width=400,
             caption="uy this wonderful product"
