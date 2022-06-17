@@ -11,6 +11,7 @@ my_cur.execute("select top 1 direct_url from catalog;")
 my_data_row = my_cur.fetchone()
 
 streamlit.text(my_data_row)
+streamlit.dataframe(my_data_row)
 
 streamlit.image(
             'https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/orange_sweatsuit.png',
