@@ -15,11 +15,14 @@ my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
 
+image = Image.open(my_data_row)
 streamlit.image(
-            my_data_row,
+            image,
             width=400,
-            caption="uy this wonderful product"
+            caption="Buy this wonderful product"
         )
+
+
 
 
 
