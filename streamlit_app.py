@@ -1,7 +1,5 @@
 import streamlit
 import snowflake.connector
-from PIL import Image
-
 
 streamlit.title('Zena\'s Athleisure Catalog')
 
@@ -15,9 +13,8 @@ my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
 
-image = Image.open('https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/orange_sweatsuit.png')
 streamlit.image(
-            image,
+            'https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/orange_sweatsuit.png',
             width=400,
             caption="Buy this wonderful product"
         )
