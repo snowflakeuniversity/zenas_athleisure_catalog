@@ -23,7 +23,7 @@ color_list = df[0].values.tolist()
 option = 'orange'
 option = streamlit.selectbox('Pick a sweatsuit color:', list(color_list))
 
-st.write('You selected:', option)
+streamlit.write('You selected:', option)
 
 
 
