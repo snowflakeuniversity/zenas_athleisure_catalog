@@ -31,7 +31,7 @@ image_url = my_cur.fetchone()
 
 
 streamlit.image(
-            'https://uni-klaus.s3.us-west-2.amazonaws.com/clothing/orange_sweatsuit.png',
+            image_url,
             width=400,
             caption="Buy this wonderful product"
         )
