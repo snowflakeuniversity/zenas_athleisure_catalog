@@ -15,7 +15,7 @@ streamlit.dataframe(my_catalog)
 
 
 # Let's put a pick list here so they can pick the color 
-streamlit.multiselect("Pick a color:", list(df))
+streamlit.multiselect("Pick a color:", list(my_catalog))
 
 # Display the table on the page.
 
