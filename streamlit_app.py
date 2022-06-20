@@ -27,8 +27,8 @@ streamlit.write('You selected:', option)
 
 # trying to drive the image from data table
 my_cur.execute("select direct_url from sweatsuits where color_or_style = 'Pink';")
-image_url = my_cur.fetchone()
-streamlit.write(image_url.str())
+image_url = my_cur.fetchone()[0]
+streamlit.write(image_url)
 
 streamlit.image(
             image_url,
