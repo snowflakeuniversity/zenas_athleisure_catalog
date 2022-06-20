@@ -11,8 +11,7 @@ my_cur = my_cnx.cursor()
 # put your sql query here
 my_cur.execute("select color_or_style, direct_url, price from sweatsuits;")
 my_catalog = my_cur.fetchall()
-df = pandas.dataframe(my_catalog)
-streamlit.dataframe(df)
+streamlit.dataframe(my_catalog)
 
 
 # Let's put a pick list here so they can pick the color 
