@@ -8,9 +8,9 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
 # put your sql query here
-my_cur.execute("select top 5 * from catalog;")
+my_cur.execute("select top 5 * from sweatsuits;")
 my_catalog = my_cur.fetchall()
-#my_data_row = my_cur.fetchone()
+
 
 
 #streamlit.text(my_data_row)
@@ -23,7 +23,29 @@ streamlit.image(
             caption="Buy this wonderful product"
         )
 
-
+DataFrame.to_html(buf=None
+                  , columns=None
+                  , col_space=None
+                  , header=True
+                  , index=True
+                  , na_rep='NaN'
+                  , formatters=None
+                  , float_format=None
+                  , sparsify=None
+                  , index_names=True
+                  , justify=None
+                  , max_rows=None
+                  , max_cols=None
+                  , show_dimensions=False
+                  , decimal='.'
+                  , bold_rows=True
+                  , classes=None
+                  , escape=True
+                  , notebook=False
+                  , border=None
+                  , table_id=None
+                  , render_links=False
+                  , encoding=None)
 
 
 
