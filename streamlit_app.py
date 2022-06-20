@@ -8,28 +8,21 @@ streamlit.title('Zena\'s Amazing Athleisure Catalog')
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
-# put your sql query here
+# run a snowflake query and put it all in a var called my_catalog
 my_cur.execute("select color_or_style from sweatsuits;")
 my_catalog = my_cur.fetchall()
-streamlit.dataframe(my_catalog)
 
+# put the data into a dataframe
 df = pandas.DataFrame(my_catalog)
 
-
-# Using Series.values.tolist()
+# put the first column into a list
 color_list = df[0].values.tolist()
-print(color_list)
-
-# Using Series.values.tolist()
-#col_list = df["Courses"].values.tolist()
-#print(col_list)
-
-
+# print(color_list)
 
 # Let's put a pick list here so they can pick the color 
-streamlit.multiselect("Pick a color:", list(color_list))
+streamlit.select("Pick a color:", list(color_list))
 
-# Display the table on the page.
+
 
 
 
