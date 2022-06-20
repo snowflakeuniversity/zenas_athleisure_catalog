@@ -13,11 +13,11 @@ my_cur.execute("select color_or_style from sweatsuits;")
 my_catalog = my_cur.fetchall()
 streamlit.dataframe(my_catalog)
 
-df_2 = pandas.DataFrame(my_cur.fetchall)
+df = pandas.DataFrame(my_catalog)
 
 
 # Using Series.values.tolist()
-color_list = dataframe[0].values.tolist()
+color_list = df[0].values.tolist()
 print(color_list)
 
 # Using Series.values.tolist()
