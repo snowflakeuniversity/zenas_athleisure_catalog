@@ -12,6 +12,7 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select color_or_style from sweatsuits;")
 my_catalog = my_cur.fetchall()
 streamlit.dataframe(my_catalog)
+df= pandas.dataframe(my_catalog)
 
 # Using Series.values.tolist()
 color_list = dataframe[0].values.tolist()
