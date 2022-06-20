@@ -23,9 +23,7 @@ color_list = df[0].values.tolist()
 streamlit.multiselect("Pick a color:", list(color_list))
 
 
-option = streamlit.selectbox(
-     'Pick a sweatsuit color:',
-     list(color_list)
+option = streamlit.selectbox('Pick a sweatsuit color:', list(color_list))
 
 st.write('You selected:', option)
 
