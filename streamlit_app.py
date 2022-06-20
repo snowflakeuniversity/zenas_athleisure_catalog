@@ -8,7 +8,7 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
 # put your sql query here
-my_cur.execute("select top 5 * from sweatsuits;")
+my_cur.execute("select color_or_style, direct_url, price from sweatsuits;")
 my_catalog = my_cur.fetchall()
 
 
