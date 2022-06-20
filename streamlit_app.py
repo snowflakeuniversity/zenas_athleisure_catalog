@@ -12,14 +12,15 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select color_or_style, direct_url, price from sweatsuits;")
 my_catalog = my_cur.fetchall()
 df = pandas.dataframe(my_catalog)
+streamlit.dataframe(df)
+
 
 # Let's put a pick list here so they can pick the color 
 streamlit.multiselect("Pick a color:", list(df))
 
 # Display the table on the page.
 
-#streamlit.text(my_data_row)
-streamlit.dataframe(my_catalog)
+
 
 
 streamlit.image(
