@@ -20,7 +20,7 @@ color_list = df[0].values.tolist()
 # print(color_list)
 
 # Let's put a pick list here so they can pick the color 
-streamlit.select("Pick a color:", list(color_list))
+streamlit.multiselect("Pick a color:", list(color_list))
 
 
 
