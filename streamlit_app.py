@@ -4,17 +4,17 @@ import pandas
 
 streamlit.title('Zena\'s Amazing Athleisure Catalog')
 
-
+# connect to snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
 # run a snowflake query and put it all in a var called my_catalog
-my_cur.execute("select * from catalog_for_website")
+my_cur.execute("select color_or_style from catalog_for_website")
 my_catalog = my_cur.fetchall()
 
-# put the data into a dataframe
+# put the dafta into a dataframe
 df = pandas.DataFrame(my_catalog)
-#ss_price = df.loc['price']
+# temp write the dataframe to the page so I Can see what I am working with
 streamlit.write(df)
 
 # put the first column into a list
@@ -27,13 +27,11 @@ option = streamlit.selectbox('Pick a sweatsuit color or style:', list(color_list
 
 #streamlit.write('You selected:', option)
 
-# trying to drive the image from data table
-my_cur.execute("select direct_url, price, image_last_modified from catalog where color_or_style = '" + option + "';")
+# use the option
+my_cur.execute("select direct_url, price, size_list, upsell_product_desc from catalog_for_website where color_or_style = '" + option + "';")
 image_url = my_cur.fetchone()[0]
 product_desc = 'Our warm, comfortable, ' + option + ' sweatsuit!' #my_cur.fetchone()[1]
 
-
-# streamlit.write(image_url)
 
 streamlit.image(
             image_url,
@@ -41,7 +39,7 @@ streamlit.image(
             caption= product_desc
         )
 
-
+#streamlit.dataframe
 
 
 
