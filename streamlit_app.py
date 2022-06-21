@@ -14,8 +14,9 @@ my_catalog = my_cur.fetchall()
 
 # put the dafta into a dataframe
 df = pandas.DataFrame(my_catalog)
+
 # temp write the dataframe to the page so I Can see what I am working with
-streamlit.write(df)
+#streamlit.write(df)
 
 # put the first column into a list
 color_list = df[0].values.tolist()
@@ -27,16 +28,20 @@ option = streamlit.selectbox('Pick a sweatsuit color or style:', list(color_list
 
 #streamlit.write('You selected:', option)
 
+product_caption = 'Our warm, comfortable, ' + option + ' sweatsuit!' 
+
 # use the option
 my_cur.execute("select direct_url, price, size_list, upsell_product_desc from catalog_for_website where color_or_style = '" + option + "';")
 image_url = my_cur.fetchone()[0]
-product_desc = 'Our warm, comfortable, ' + option + ' sweatsuit!' #my_cur.fetchone()[1]
+df2 = my_cur.fetchone()
+streamlit.write(df2)
+
 
 
 streamlit.image(
             image_url,
             width=400,
-            caption= product_desc
+            caption= product_caption
         )
 
 #streamlit.dataframe
