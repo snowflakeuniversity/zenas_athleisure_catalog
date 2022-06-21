@@ -9,7 +9,7 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
 # run a snowflake query and put it all in a var called my_catalog
-my_cur.execute("select distinct color_or_style, price, direct_url, image_last_modified from catalog")
+my_cur.execute("select * from catalog_for_website")
 my_catalog = my_cur.fetchall()
 
 # put the data into a dataframe
