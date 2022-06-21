@@ -9,11 +9,13 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
 # run a snowflake query and put it all in a var called my_catalog
-my_cur.execute("select color_or_style, direct_url from sweatsuits;")
+my_cur.execute("select color_or_style, price from sweatsuits;")
 my_catalog = my_cur.fetchall()
 
 # put the data into a dataframe
 df = pandas.DataFrame(my_catalog)
+ss_price = df.loc['price']
+streamlit.write(ss_price)
 
 # put the first column into a list
 color_list = df[0].values.tolist()
