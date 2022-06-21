@@ -35,7 +35,7 @@ product_desc = 'Our warm, comfortable, ' + option + ' sweatsuit!'  #my_cur.fetch
 streamlit.image(
             image_url,
             width=400,
-            caption= 'wiat'
+            caption= product_desc
         )
 
 
