@@ -14,8 +14,8 @@ my_catalog = my_cur.fetchall()
 
 # put the data into a dataframe
 df = pandas.DataFrame(my_catalog)
-ss_price = df.loc['price']
-streamlit.write(ss_price)
+#ss_price = df.loc['price']
+streamlit.write(df)
 
 # put the first column into a list
 color_list = df[0].values.tolist()
