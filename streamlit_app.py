@@ -21,7 +21,7 @@ color_list = df[0].values.tolist()
 
 # Let's put a pick list here so they can pick the color 
 option = 'orange'
-option = streamlit.selectbox('Pick a sweatsuit color:', list(color_list))
+option = streamlit.selectbox('Pick a sweatsuit color or style:', list(color_list))
 
 #streamlit.write('You selected:', option)
 
