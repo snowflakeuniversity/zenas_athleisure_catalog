@@ -23,10 +23,10 @@ color_list = df[0].values.tolist()
 option = 'orange'
 option = streamlit.selectbox('Pick a sweatsuit color:', list(color_list))
 
-streamlit.write('You selected:', option)
+#streamlit.write('You selected:', option)
 
 # trying to drive the image from data table
-my_cur.execute("select direct_url from sweatsuits where color_or_style = 'Pink';")
+my_cur.execute("select direct_url from sweatsuits where color_or_style = '" + option+ "';")
 image_url = my_cur.fetchone()[0]
 streamlit.write(image_url)
 
