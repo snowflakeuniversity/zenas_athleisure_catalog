@@ -28,14 +28,14 @@ option = streamlit.selectbox('Pick a sweatsuit color:', list(color_list))
 # trying to drive the image from data table
 my_cur.execute("select direct_url, color_or_style from sweatsuits where color_or_style = '" + option + "';")
 image_url = my_cur.fetchone()[0]
-product_desc = my_cur.fetchone()[1]
+# product_desc = my_cur.fetchone()[1]
 
 # streamlit.write(image_url)
 
 streamlit.image(
             image_url,
             width=400,
-            caption= product_desc
+            caption= 'wiat'
         )
 
 
