@@ -30,25 +30,13 @@ product_caption = 'Our warm, comfortable, ' + option + ' sweatsuit!'
 
 # use the option selected to go back and get all the info from the database
 my_cur.execute("select direct_url, price, size_list, upsell_product_desc from catalog_for_website where color_or_style = '" + option + "';")
-image_url = my_cur.fetchone()[0]
-
-streamlit.image(
-            image_url,
-            width=400,
-            caption= product_caption
-        )
-
-#streamlit.dataframe
-
-# trying to do this cursor dataframe business correctly
-my_cur.execute("select direct_url, price, size_list, upsell_product_desc from catalog_for_website where color_or_style = '" + option + "';")
 df2 = my_cur.fetchone()
-streamlit.write("is the next line none?")
-streamlit.write(df2[0],[1])
-streamlit.write(df2[0],[2])
 
 streamlit.image(
             df2[0],
             width=400,
             caption= product_caption
         )
+
+streamlit.text('Price: ', df2[1])
+streamlit.text(df2[2])
