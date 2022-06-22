@@ -47,3 +47,8 @@ streamlit.write("is the next line none?")
 streamlit.write(df2[0],[1])
 streamlit.write(df2[0],[2])
 
+streamlit.image(
+            df2[0],
+            width=400,
+            caption= product_caption
+        )
