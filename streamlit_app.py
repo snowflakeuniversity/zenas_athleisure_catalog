@@ -38,5 +38,5 @@ streamlit.image(
             caption= product_caption
         )
 
-streamlit.text('Price: ', df2[1])
-streamlit.text(df2[2])
+streamlit.write('Price: ', df2[1])
+streamlit.write(df2[2])
